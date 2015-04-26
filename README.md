@@ -1,12 +1,15 @@
 # gettingandcleaning
 Programming assignment for the Coursera Getting and Cleaning Data course.
 ## run_analysis.R
-The run_analysis.R script creates 2 tidy data tables from raw activity data via a series of 5 steps outlined below.  
-1.  Merges the training and the test sets to create one data set.  
-2.  Extracts only the measurements on the mean and standard deviation for each measurement.   
-3.  Uses descriptive activity names to name the activities in the data set.  
-4.  Appropriately labels the data set with descriptive variable names.   
-5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.  
+The run_analysis.R script creates 2 tidy data tables from raw activity data via a series of 8 steps outlined below.  
+1.  Loads the data from the working directory (see note below).  
+2.  Combines the subject and activity data with the features measurement data for each the training and test sets.  
+3.  Merges the training data and the test data sets to create a single data set.  
+4.  Extracts only the measurements with a column name containing "mean()" or "std()", i.e. only the measurement means and standard deviations.  
+5.  Applies the activity names, found in activity_labels.txt, to the data set.  
+6.  Appropriately labels the variables with the features names found in features.txt.  
+7.  The data created is called "act.data".  
+8.  From the act.data, a second data set is created, with the average of each variable for each activity and each subject. This data is called act.means and retains the data structure from act.data.   
 ## Raw Data
 The raw data can be downloaded here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  
 Please extract the data into your working directory. run_analysis.R assumes that the data will be in the working directory in the folder labelled "UCI HAR Dataset"
